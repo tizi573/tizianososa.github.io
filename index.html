@@ -1,35 +1,36 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mi sitio</title>
+
+<title>Gato Meow</title>
 
 <style>
 
 body{
-background:black;
-color:white;
-font-family:Arial;
-text-align:center;
+background:#111;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
 }
 
-h1{
-color:cyan;
+#gato{
+
+width:300px;
+cursor:pointer;
+transition: transform 0.1s;
+
 }
 
-img{
-width:80%;
-max-width:400px;
-border-radius:10px;
-}
+#gato:active{
 
-button{
-padding:10px;
-font-size:18px;
-border:none;
-border-radius:10px;
-background:cyan;
+transform: scaleY(0.8) scaleX(1.1);
+
 }
 
 </style>
@@ -38,17 +39,23 @@ background:cyan;
 
 <body>
 
-<h1>Bienvenido a mi sitio 🎮</h1>
+<img id="gato" src="gato.png">
 
-<p>Este es mi proyecto</p>
+<audio id="meow" src="meow.mp3"></audio>
 
-<img src="imagen.png">
+<script>
 
-<br><br>
+const gato = document.getElementById("gato")
+const sonido = document.getElementById("meow")
 
-<button onclick="alert('Hola 😎')">
-Haz clic
-</button>
+gato.addEventListener("click", () => {
+
+sonido.currentTime = 0
+sonido.play()
+
+})
+
+</script>
 
 </body>
 
